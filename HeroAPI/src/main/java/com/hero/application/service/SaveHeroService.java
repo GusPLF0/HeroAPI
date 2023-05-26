@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.UUID;
 
 @RequiredArgsConstructor
-@Service
+@Component
 public class SaveHeroService implements SaveHeroUseCase {
 
     private final CreateHeroPort createHeroPort;
