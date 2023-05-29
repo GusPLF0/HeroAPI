@@ -1,6 +1,6 @@
-package com.hero.application.port.in;
+package com.hero.application.port.in.save;
 
-import org.springframework.stereotype.Component;
+import com.hero.application.port.in.save.SaveHeroRequest;
 
 import java.util.UUID;
 

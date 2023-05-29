@@ -1,10 +1,9 @@
 package com.hero.adapter.in;
 
-import com.hero.application.port.in.SaveHeroRequest;
-import com.hero.application.port.in.SaveHeroUseCase;
+import com.hero.application.port.in.save.SaveHeroRequest;
+import com.hero.application.port.in.save.SaveHeroUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +17,7 @@ import static org.springframework.http.ResponseEntity.created;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "/api/v1/heroes/save")
+@RequestMapping(value = "/api/v1/heroes")
 public class SaveHeroController {
 
     private final SaveHeroUseCase saveHeroUseCase;
