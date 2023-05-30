@@ -1,7 +1,6 @@
 package com.hero.application.port.out;
 
-import com.hero.domain.Hero;
-import org.springframework.stereotype.Component;
+import com.hero.application.port.out.model.CreateHeroCommand;
 
 import java.util.UUID;
 

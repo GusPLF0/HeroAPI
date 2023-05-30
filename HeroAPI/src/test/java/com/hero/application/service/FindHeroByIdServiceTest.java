@@ -1,6 +1,6 @@
 package com.hero.application.service;
 
-import com.hero.adapter.in.HeroModel;
+import com.hero.adapter.in.web.HeroModel;
 import com.hero.application.port.out.FindHeroByIdPort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,7 +11,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.Instant;
 import java.util.UUID;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)

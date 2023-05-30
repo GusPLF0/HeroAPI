@@ -1,7 +1,6 @@
-package com.hero.adapter.in;
+package com.hero.adapter.in.web;
 
 import com.hero.application.port.in.FindHeroByIdUseCase;
-import com.hero.application.port.in.save.SaveHeroUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;

@@ -1,4 +1,4 @@
-package com.hero.application.port.in.save;
+package com.hero.application.port.in.model;
 
 import com.hero.common.SelfValidating;
 import com.hero.domain.Race;

@@ -1,6 +1,6 @@
 package com.hero.application.port.in;
 
-import com.hero.adapter.in.HeroModel;
+import com.hero.adapter.in.web.HeroModel;
 
 import java.util.UUID;
 

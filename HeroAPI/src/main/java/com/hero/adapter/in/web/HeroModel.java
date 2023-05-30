@@ -1,4 +1,4 @@
-package com.hero.adapter.in;
+package com.hero.adapter.in.web;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;

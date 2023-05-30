@@ -1,7 +1,8 @@
 package com.hero.adapter.out.persistence;
 
-import com.hero.adapter.in.HeroModel;
+import com.hero.adapter.in.web.HeroModel;
 import com.hero.application.port.out.*;
+import com.hero.application.port.out.model.CreateHeroCommand;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,8 @@ public class HeroPersistenceAdapter implements
         CreateHeroPort,
         CreatePowerStatsPort,
         FindPowerStatsPort,
-        FindHeroByIdPort {
+        FindHeroByIdPort,
+        FindHeroByNamePort {
 
     private final HeroRepository heroRepository;
     private final PowerStatsRepository powerStatsRepository;
@@ -64,6 +66,29 @@ public class HeroPersistenceAdapter implements
     @Override
     public HeroModel findHeroById(UUID heroId) {
         HeroEntity heroFounded = heroRepository.findById(heroId).orElse(null);
+
+        if (heroFounded == null) {
+            return null;
+        }
+
+        PowerStatsEntity powerStatsOfFounded = powerStatsRepository.findById(heroFounded.getPowerStatsId()).get();
+
+        return new HeroModel(heroFounded.getHeroId(),
+                heroFounded.getName(),
+                heroFounded.getRace(),
+                powerStatsOfFounded.getStrength(),
+                powerStatsOfFounded.getAgility(),
+                powerStatsOfFounded.getDexterity(),
+                powerStatsOfFounded.getIntelligence(),
+                heroFounded.getCreatedAt(),
+                heroFounded.getUpdatedAt(),
+                heroFounded.getEnabled()
+        );
+    }
+
+    @Override
+    public HeroModel findHeroByName(String name) {
+        HeroEntity heroFounded = heroRepository.findByName(name).orElse(null);
 
         if (heroFounded == null) {
             return null;

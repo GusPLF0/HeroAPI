@@ -1,7 +1,7 @@
-package com.hero.adapter.in;
+package com.hero.adapter.in.web;
 
-import com.hero.application.port.in.save.SaveHeroRequest;
-import com.hero.application.port.in.save.SaveHeroUseCase;
+import com.hero.application.port.in.model.SaveHeroRequest;
+import com.hero.application.port.in.SaveHeroUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

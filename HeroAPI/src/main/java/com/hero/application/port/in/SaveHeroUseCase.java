@@ -1,6 +1,6 @@
-package com.hero.application.port.in.save;
+package com.hero.application.port.in;
 
-import com.hero.application.port.in.save.SaveHeroRequest;
+import com.hero.application.port.in.model.SaveHeroRequest;
 
 import java.util.UUID;
 

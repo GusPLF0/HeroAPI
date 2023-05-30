@@ -1,11 +1,11 @@
 package com.hero.application.service;
 
-import com.hero.application.port.in.save.SaveHeroRequest;
-import com.hero.application.port.in.save.SaveHeroUseCase;
-import com.hero.application.port.out.CreateHeroCommand;
+import com.hero.application.port.in.SaveHeroUseCase;
+import com.hero.application.port.in.model.SaveHeroRequest;
 import com.hero.application.port.out.CreateHeroPort;
 import com.hero.application.port.out.CreatePowerStatsPort;
 import com.hero.application.port.out.FindPowerStatsPort;
+import com.hero.application.port.out.model.CreateHeroCommand;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +19,13 @@ public class SaveHeroService implements SaveHeroUseCase {
     private final FindPowerStatsPort findPowerStatsPort;
     private final CreatePowerStatsPort createPowerStatsPort;
 
+    private static CreateHeroCommand createHeroToSave(SaveHeroRequest saveHeroRequest, UUID powerStats) {
+        return new CreateHeroCommand(
+                saveHeroRequest.getName(),
+                saveHeroRequest.getRace(),
+                powerStats
+        );
+    }
 
     @Override
     public UUID createHero(SaveHeroRequest saveHeroRequest) {
@@ -33,14 +40,6 @@ public class SaveHeroService implements SaveHeroUseCase {
         }
 
         return createHeroPort.createHero(heroToSave);
-    }
-
-    private static CreateHeroCommand createHeroToSave(SaveHeroRequest saveHeroRequest, UUID powerStats) {
-        return new CreateHeroCommand(
-                saveHeroRequest.getName(),
-                saveHeroRequest.getRace(),
-                powerStats
-        );
     }
 
     private UUID createNewPowerStatsForHero(SaveHeroRequest saveHeroRequest) {

@@ -1,7 +1,7 @@
 package com.hero.application.service;
 
-import com.hero.application.port.in.save.SaveHeroRequest;
-import com.hero.application.port.out.CreateHeroCommand;
+import com.hero.application.port.in.model.SaveHeroRequest;
+import com.hero.application.port.out.model.CreateHeroCommand;
 import com.hero.application.port.out.CreateHeroPort;
 import com.hero.application.port.out.CreatePowerStatsPort;
 import com.hero.application.port.out.FindPowerStatsPort;
