@@ -1,6 +1,6 @@
 package com.hero.application.service;
 
-import com.hero.adapter.in.web.HeroModel;
+import com.hero.adapter.in.web.model.HeroModel;
 import com.hero.application.port.in.FindHeroByNameUseCase;
 import com.hero.application.port.out.FindHeroByNamePort;
 import lombok.RequiredArgsConstructor;

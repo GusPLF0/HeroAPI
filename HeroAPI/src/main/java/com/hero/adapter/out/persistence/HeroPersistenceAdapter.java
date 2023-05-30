@@ -1,11 +1,11 @@
 package com.hero.adapter.out.persistence;
 
-import com.hero.adapter.in.web.HeroModel;
+import com.hero.adapter.in.web.model.HeroModel;
 import com.hero.application.port.out.*;
 import com.hero.application.port.out.model.CreateHeroCommand;
 import com.hero.application.port.out.model.UpdateHeroCommand;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.relational.core.sql.Update;
+import org.springframework.data.relational.core.sql.Delete;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -19,7 +19,8 @@ public class HeroPersistenceAdapter implements
         FindPowerStatsPort,
         FindHeroByIdPort,
         FindHeroByNamePort,
-        UpdateHeroPort {
+        UpdateHeroPort,
+        DeleteHeroPort {
 
     private final HeroRepository heroRepository;
     private final PowerStatsRepository powerStatsRepository;
@@ -123,5 +124,10 @@ public class HeroPersistenceAdapter implements
                 updateHeroCommand.isEnabled());
 
         heroRepository.save(hero);
+    }
+
+    @Override
+    public void deleteHero(UUID uuidToDelete) {
+        heroRepository.deleteById(uuidToDelete);
     }
 }

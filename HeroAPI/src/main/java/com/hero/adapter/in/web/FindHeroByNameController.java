@@ -1,5 +1,6 @@
 package com.hero.adapter.in.web;
 
+import com.hero.adapter.in.web.model.HeroModel;
 import com.hero.application.port.in.FindHeroByNameUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

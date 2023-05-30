@@ -1,6 +1,6 @@
 package com.hero.application.service;
 
-import com.hero.adapter.in.web.HeroModel;
+import com.hero.adapter.in.web.model.HeroModel;
 import com.hero.application.port.in.UpdateHeroUseCase;
 import com.hero.application.port.in.model.UpdateHeroRequest;
 import com.hero.application.port.out.CreatePowerStatsPort;

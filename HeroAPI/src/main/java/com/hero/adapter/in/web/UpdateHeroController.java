@@ -1,6 +1,5 @@
 package com.hero.adapter.in.web;
 
-import com.hero.application.port.in.SaveHeroUseCase;
 import com.hero.application.port.in.UpdateHeroUseCase;
 import com.hero.application.port.in.model.UpdateHeroRequest;
 import lombok.RequiredArgsConstructor;
@@ -21,10 +20,10 @@ public class UpdateHeroController {
     public ResponseEntity<?> update(@Validated @PathVariable UUID id,
                                     @Validated @RequestBody UpdateHeroRequest updateHeroRequest) {
 
-        if(updateHeroUseCase.updateHero(id, updateHeroRequest)) {
+        if (updateHeroUseCase.updateHero(id, updateHeroRequest)) {
             return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.notFound().build();
         }
+
+        return ResponseEntity.notFound().build();
     }
 }
