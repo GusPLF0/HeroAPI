@@ -3,7 +3,9 @@ package com.hero.adapter.out.persistence;
 import com.hero.adapter.in.web.HeroModel;
 import com.hero.application.port.out.*;
 import com.hero.application.port.out.model.CreateHeroCommand;
+import com.hero.application.port.out.model.UpdateHeroCommand;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.relational.core.sql.Update;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -16,7 +18,8 @@ public class HeroPersistenceAdapter implements
         CreatePowerStatsPort,
         FindPowerStatsPort,
         FindHeroByIdPort,
-        FindHeroByNamePort {
+        FindHeroByNamePort,
+        UpdateHeroPort {
 
     private final HeroRepository heroRepository;
     private final PowerStatsRepository powerStatsRepository;
@@ -32,7 +35,6 @@ public class HeroPersistenceAdapter implements
                 Instant.now(),
                 Instant.now(),
                 true);
-
         return heroRepository.save(heroToSave).getHeroId();
     }
 
@@ -107,5 +109,19 @@ public class HeroPersistenceAdapter implements
                 heroFounded.getUpdatedAt(),
                 heroFounded.getEnabled()
         );
+    }
+
+
+    @Override
+    public void updateHero(UpdateHeroCommand updateHeroCommand) {
+        HeroEntity hero = new HeroEntity(updateHeroCommand.getHeroUuid(),
+                updateHeroCommand.getName(),
+                updateHeroCommand.getRace().toString(),
+                updateHeroCommand.getPowerStatsUuid(),
+                updateHeroCommand.getCreatedAt(),
+                updateHeroCommand.getUpdatedAt(),
+                updateHeroCommand.isEnabled());
+
+        heroRepository.save(hero);
     }
 }
