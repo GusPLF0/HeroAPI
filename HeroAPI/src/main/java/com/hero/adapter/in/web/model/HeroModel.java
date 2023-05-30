@@ -23,13 +23,13 @@ public class HeroModel {
 
     private String race;
 
-    private int strength;
+    private Integer strength;
 
-    private int agility;
+    private Integer agility;
 
-    private int dexterity;
+    private Integer dexterity;
 
-    private int intelligence;
+    private Integer intelligence;
 
     private Instant createdAt;
 

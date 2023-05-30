@@ -23,7 +23,7 @@ public class DeleteHeroController {
 
         if(deleteHeroUseCase.deleteHero(id)) {
             return ResponseEntity.noContent().build();
-        } 
+        }
 
         return ResponseEntity.notFound().build();
     }
