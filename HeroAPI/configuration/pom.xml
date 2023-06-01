@@ -7,10 +7,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>application</artifactId>
+    <artifactId>configuration</artifactId>
     <packaging>jar</packaging>
 
-    <name>application</name>
+    <name>configuration</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -25,16 +25,16 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>jakarta.validation</groupId>
-            <artifactId>jakarta.validation-api</artifactId>
+            <groupId>com.gusplf</groupId>
+            <artifactId>persistence-adapter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>com.gusplf</groupId>
+            <artifactId>web-adapter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

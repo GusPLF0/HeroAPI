@@ -17,8 +17,9 @@
 	</properties>
 	<modules>
 		<module>application</module>
-		<module>datastore-postgre</module>
-		<module>domain</module>
+		<module>configuration</module>
+		<module>persistence-adapter</module>
+		<module>web-adapter</module>
 	</modules>
 	<dependencies>
 	</dependencies>
