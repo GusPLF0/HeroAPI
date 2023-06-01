@@ -22,6 +22,7 @@
 		<module>web-adapter</module>
 	</modules>
 	<dependencies>
+
 	</dependencies>
 
 	<build>
